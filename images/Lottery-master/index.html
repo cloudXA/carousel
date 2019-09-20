@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="http://www.douchaoyang.com/public/reset.pc.css">
+	<link rel="stylesheet" type="text/css" href="lottery.css">
+	<title>lottery</title>
+</head>
+<body>
+	<div id="lottery">
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="lottery-unit lottery-unit-1">1</td>
+				<td class="lottery-unit lottery-unit-2">2</td>
+				<td class="lottery-unit lottery-unit-3">3</td>
+			</tr>
+			<tr>
+				<td class="lottery-unit lottery-unit-8">8</td>
+				<td><a href="javascript:;" id="begin">开始</a></td>
+				<td class="lottery-unit lottery-unit-4">4</td>
+			</tr>
+			<tr>
+				<td class="lottery-unit lottery-unit-7">7</td>
+				<td class="lottery-unit lottery-unit-6">6</td>
+				<td class="lottery-unit lottery-unit-5">5</td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="http://www.douchaoyang.com/public/core.lib.js" charset="utf-8"></script>
+	<script type="text/javascript">
+	(function($){
+		$.loadScript("plug.lottery.js",function(){
+			var ward=[
+				"一等奖",
+				"二等奖",
+				"三等奖",
+				"四等奖",
+				"五等奖",
+				"六等奖",
+				"七等奖",
+				"八等奖"
+				];
+			var lottery=new Lottery({
+				loop:3,
+				speed:90
+			});
+			g("begin").onclick=function(){
+				var n=$.randomInt(7);
+				lottery.run(n+1,function(){
+					alert("恭喜您中了"+ward[n]+"！")
+				});
+			}
+		});
+	})(core);
+	</script>
+</body>
+</html>

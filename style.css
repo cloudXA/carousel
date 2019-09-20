@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.photoFrame {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    top: 0;
+    left: 0;
+}
+.contain {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 2px solid gray;
+
+}
+.album {
+    position: absolute;
+    width: 1800px;
+    top:0;
+    left: 0;
+}
+.album li {
+    list-style: none;
+    float: left;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    content: '';
+    clear: both;
+    height: 0;
+}
+span {
+    font-size: 40px;
+    top: 50%;
+    margin-bottom: -200px;
+    cursor: pointer;
+    background-color: rgb(207, 201, 201);
+    display: none;
+
+}
+.left {
+    position: absolute;
+    left: 0;
+    z-index: 333;
+}
+.right {
+    position: absolute;
+    right: 0;
+    
+    z-index: 333;
+}
+.subscript {
+    width: 300px;
+    /* height: 20px; */
+    position: absolute;
+    /* margin-right: 10px; */
+    bottom: 10px;
+    left:80px;
+    
+}
+.subscript li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 20px;
+    list-style: none;
+    background-color: white;
+}
+.subscript li.current {
+    background-color: red;
+}
+.subscript li:last-child {
+    visibility: hidden;
+}
